@@ -1,0 +1,25 @@
+{% extends "josaaanly/base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'josaaanly/graph.css' %}">
+{% endblock head %}
+
+{% block content %}
+    <div style="display: flex;align-items: center;justify-content: center;margin-top:10px;">
+        <h1>Your rank is {{rank}}</h1>
+    </div>
+    <div>
+        <h3>What would you like to know about your rank?</h3>
+        <form action="{% url 'plot-graph' %}" method="post" id="get-graph">
+            <input value="{{rank}}" type="text" name="rank" style="display: none;">
+            {% csrf_token %}
+            <label for="option1">Which Branches Can you get ?
+            <input type="radio" id="option1" class="options" name="graph-type" value=1></label>
+            
+            <label for="option2">
+            <input type="radio" id="option2" class="options" name="graph-type" value=2></label>
+
+            <input type="submit" value="ok" class="submit">
+        </form>
+    </div>
+{% endblock content %}

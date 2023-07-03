@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'josaaanly/main.css' %}">
+
+        <title>Josaa Analysis Portal</title>
+        
+        {%block head%}{%endblock%}
+    </head>
+    <body>
+        <div class="nav">
+            <h1 style="color:#45CFDD">Josaa Counselling Helper</h1>
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+
+</html>

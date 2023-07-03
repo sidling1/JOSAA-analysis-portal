@@ -1,0 +1,14 @@
+#get-graph{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    align-items: center;
+}
+
+.options{
+    margin-left: 10px;
+}
+
+.submit{
+    width:100px;
+}

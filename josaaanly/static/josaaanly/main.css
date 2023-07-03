@@ -1,0 +1,27 @@
+*{
+    margin-top:0;
+}
+html{
+    padding-top:0;
+}
+body{
+    width: 100%;
+    padding:0;
+    margin-left:0;
+}
+
+.nav{
+    background-color:#6527BE;
+    box-shadow: 1.5px 1.5px 0px 2.0px #9681EB;
+    
+    height: 70px;
+    width: 100%;
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding-top:5px;
+}
+
+
+

@@ -1,0 +1,16 @@
+{% extends "josaaanly/base.html" %}
+{% load static %}
+{% block head %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock head %}
+
+{% block content %}
+    <p>{{rank}}</p>
+    {% for row in data %}
+        <div style="margin:30px;background-color: brown;color:white;padding:10px;">
+            <p>{{row.Institute}}</p>
+            <p>{{row.Programme}}</p>
+            <p>{{row.OpeningRank}}      {{row.ClosingRank}}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}

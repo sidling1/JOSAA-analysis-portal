@@ -1,0 +1,17 @@
+{% extends "josaaanly/Institute/select.html" %}
+{% load static %}
+
+{% block topic %}
+  <p>Which Branch would you like to see !</p>
+{% endblock topic %}
+
+{% block options %}
+    <input type="search" name="srch" id="pattern">
+  {% for name in data %}
+  <form action="{% url 'InstituteDetails' %}" method="post">
+    {% csrf_token %}
+    <input name="insti" value="{{ name.Programme }}" style="display: none;">
+    <input type="submit" value="{{name.Programme}}" style="width:fit-content;">
+  </form>
+  {% endfor %}
+{% endblock options %}

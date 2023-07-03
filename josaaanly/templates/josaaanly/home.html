@@ -1,0 +1,18 @@
+{% extends "josaaanly/base.html" %}
+{% load static %}
+
+{% block head %}
+    <style>
+
+    </style>
+{%endblock head %}
+{% block content %}
+    <form action="{% url 'josaa-graph' %}" method="post">
+        {% csrf_token %}
+        <label for="your_rank">What is your rank ?</label>
+        <input type="text" id="your_rank" name="your_rank" value="{{rank}}">
+        <input type="submit" value="ok">
+    </form>
+    <a href="{% url 'selectInstitute' %}">Select A particular institute</a>
+    <a href="{% url 'selectBranch' %}">Select A particular Branch Preference</a>
+{% endblock content %}
