@@ -8,4 +8,5 @@ urlpatterns = [
     path('selectInstitute',views.selectInstitute,name='selectInstitute'),
     path('selectBranch',views.selectBranch,name='selectBranch'),
     path('instidetails',views.InstituteDetails,name='InstituteDetails'),
+    path('branchdetails',views.BranchDetails,name='BranchDetails')
 ]

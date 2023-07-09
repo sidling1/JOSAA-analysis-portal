@@ -7,22 +7,25 @@
 {% endblock head %}
 
 {% block content %}
-  <div id="info">  
-    <p>{{insti}}</p>
+  <div id="info">
+    <p>{{branch}}</p>
     <p>seat type:<span style="color: #393E46;">{{seat}}</span></p>
-    <form action="{% url 'InstituteDetails' %}" method="post" id="{{ insti }}">
-      {% csrf_token %}
-      <input name="insti" value="{{ insti }}" style="display: none;"/>
-      <select name="seat">
-        <option value="OPEN">open</option>
-        <option value="SC">Scheduled Caste (SC)</option>
-        <option value="ST">Scheduled Tribe (SC)</option>
-        <option value="OBC-NCL">Other Backward Classes (OBC-NCL)</option>
-        <option value="EWS">Economically Weaker Section (EWS)</option>
-      </select>
-      <input type="submit" value="Apply" id="submit">
-    </form>
-  </div>
+
+    <div>
+      <form action="{% url 'BranchDetails' %}" method="post" id="{{ branch }}">
+        {% csrf_token %}
+        <input name="branch" value="{{ branch }}" style="display: none;"/>
+        <select name="seat">
+          <option value="OPEN">open</option>
+          <option value="SC">Scheduled Caste (SC)</option>
+          <option value="ST">Scheduled Tribe (SC)</option>
+          <option value="OBC-NCL">Other Backward Classes (OBC-NCL)</option>
+          <option value="EWS">Economically Weaker Section (EWS)</option>
+        </select>
+        <input type="submit" value="Apply" id="submit">
+      </form>
+    </div>
+    </div>
   <div>
     <canvas id="myChart"></canvas>
   </div>
@@ -39,7 +42,7 @@
       var x_data = [];
       for (const key in x_values) {
         if (Object.hasOwnProperty.call(x_values, key)) {
-          const element = x_values[key]['Programme'];
+          const element = x_values[key]['Institute'];
           x_data.push(element)
         }
       }

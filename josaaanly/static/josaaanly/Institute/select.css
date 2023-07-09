@@ -1,0 +1,36 @@
+p{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap:10px;
+}
+
+#pattern{
+    height:30px;
+    border:none;
+    padding:10px;
+    
+}
+
+.insti-name{
+    padding:10px;
+    min-width: 500px;
+
+    border:none;
+    border-radius: 10px;
+    background-color: #F9D949;
+    color:#393E46;
+    
+    font-size: 1rem;
+}
+
+.insti-name:hover{
+    box-shadow: 0.5px 0.5px 0 1px#393E46, -0.5px -0.5px 0 1px#393E46;
+}

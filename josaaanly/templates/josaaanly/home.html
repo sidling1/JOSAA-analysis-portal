@@ -2,17 +2,27 @@
 {% load static %}
 
 {% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'josaaanly/home.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
     <style>
 
     </style>
 {%endblock head %}
 {% block content %}
-    <form action="{% url 'josaa-graph' %}" method="post">
-        {% csrf_token %}
-        <label for="your_rank">What is your rank ?</label>
-        <input type="text" id="your_rank" name="your_rank" value="{{rank}}">
-        <input type="submit" value="ok">
-    </form>
-    <a href="{% url 'selectInstitute' %}">Select A particular institute</a>
-    <a href="{% url 'selectBranch' %}">Select A particular Branch Preference</a>
+    <div id="home-page">
+        <form action="{% url 'josaa-graph' %}" method="post">
+            {% csrf_token %}
+            <label for="your_rank">What is your rank ?</label>
+            <input type="text" id="your_rank" name="your_rank" value="{{rank}}" id="inp1">
+            <input type="submit" value="continue" id="submit">
+        </form>
+        <div class="info">
+            <p>Want to know about a particular Institute?</p>
+            <a href="{% url 'selectInstitute' %}">Select Institute</a>
+        </div>
+        <div class="info">
+            <p>Want to know about a specific Branch ?</p>
+            <a href="{% url 'selectBranch' %}">Select Branch</a>
+        </div>
+    </div>
 {% endblock content %}

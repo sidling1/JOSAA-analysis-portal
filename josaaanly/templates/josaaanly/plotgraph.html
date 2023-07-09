@@ -2,15 +2,39 @@
 {% load static %}
 {% block head %}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about{
+            min-width: 500px;
+        }
+
+        .clickable:hover{
+            cursor: pointer;
+        }
+    </style>
 {% endblock head %}
 
 {% block content %}
-    <p>{{rank}}</p>
+    <h1 style="padding: 10px;" >Click on any institute or branch to get more information about them.</h1>
     {% for row in data %}
-        <div style="margin:30px;background-color: brown;color:white;padding:10px;">
-            <p>{{row.Institute}}</p>
-            <p>{{row.Programme}}</p>
-            <p>{{row.OpeningRank}}      {{row.ClosingRank}}</p>
+        <div style="margin:30px;background-color: #222831;color:#FFD369;padding:20px;
+        width:fit-content;border-radius: 15px;text-align: center;display: flex;flex-direction: column;align-items: center;gap:15px;" class="about">
+        <form action="{% url 'InstituteDetails' %}" method="post" id="{{name.Institute}}">
+            {% csrf_token %}
+            <input name="seat" value="OPEN" style="display: none;"/>
+            <input type="submit" name='insti' style="border:none;background-color: #222831;color:#FFD369;font-size: 30px;text-align: center;padding: 0px;text-decoration: none;" class="clickable" value="{{row.Institute}}">
+        </form>
+        <form action="{% url 'BranchDetails' %}" method="post">
+            {% csrf_token %}
+            <input name="seat" value="OPEN" style="display: none;"/>
+            <input type="submit" name="branch" style="border:none;background-color: #222831;color:#FFD369;font-size:1.2rem;text-decoration: none;" class="clickable" value="{{row.Programme}}">
+        </form>
+            <p style="color:#FFD369;font-size:1.2rem;">OpeningRank - {{row.OpeningRank}} &nbsp&nbsp&nbsp&nbsp Closing Rank - {{row.ClosingRank}}</p>
         </div>
     {% endfor %}
 {% endblock content %}

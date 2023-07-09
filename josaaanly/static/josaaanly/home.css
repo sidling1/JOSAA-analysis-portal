@@ -1,0 +1,73 @@
+/* Styles for the Home page */
+*{
+    font-family: "Roboto Slab";
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-page{
+    width: fit-content;
+    padding: 15vh;
+}
+
+#home-page form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#home-page form label{
+    width: fit-content;
+    padding-bottom:10px;
+    
+    font-size:2rem;
+}
+
+#home-page form input{
+    width:100px;
+    
+    font-size: 1rem;
+    text-align: center;
+    
+    border:none;
+    background-color: transparent;
+    color: #393E46;
+}
+
+#home-page #submit{
+    height: fit-content;
+    padding:10px;
+    
+    background-color: #F9D949;
+    border-radius: 10px;
+    
+    cursor:pointer;
+}
+
+#home-page #submit:hover{
+    box-shadow: 0.5px 0.5px 0 1px#393E46, -0.5px -0.5px 0 1px#393E46;
+}
+
+#home-page .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top:50px;
+}
+
+#home-page a{
+    padding:7px;
+    border-radius: 5px;
+    
+    background-color: #F9D949;
+    color:#393E46;
+    
+    text-decoration: none;
+}

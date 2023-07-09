@@ -4,16 +4,22 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{% static 'josaaanly/main.css' %}">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Josaa Analysis Portal</title>
-        
+        <style>
+            h1 a:active,h1 a:visited,h1 a:hover{
+                color:#00ADB5;
+            }
+        </style>
         {%block head%}{%endblock%}
     </head>
     <body>
         <div class="nav">
-            <h1 style="color:#45CFDD">Josaa Counselling Helper</h1>
+            <h1 style="color:#00ADB5;"><a href="{% url 'home-page' %}" style="text-decoration: none;">Josaa Counselling Helper</a></h1>
         </div>
-        {% block content %}{% endblock %}
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>    
     </body>
 
 </html>

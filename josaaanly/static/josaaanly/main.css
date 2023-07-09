@@ -1,5 +1,7 @@
 *{
     margin-top:0;
+    font-family: "Roboto Slab";
+    color: #00ADB5;
 }
 html{
     padding-top:0;
@@ -8,11 +10,12 @@ body{
     width: 100%;
     padding:0;
     margin-left:0;
+    background-color: #EEEEEE;
 }
 
 .nav{
-    background-color:#6527BE;
-    box-shadow: 1.5px 1.5px 0px 2.0px #9681EB;
+    background-color:#222831;
+    box-shadow: 1.5px 1.5px 0px 2.0px #393E46;
     
     height: 70px;
     width: 100%;

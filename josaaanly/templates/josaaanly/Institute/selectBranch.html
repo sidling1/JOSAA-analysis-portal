@@ -1,17 +1,27 @@
 {% extends "josaaanly/Institute/select.html" %}
 {% load static %}
 
+{% block head %}
+  <link rel="stylesheet" href="{% static 'josaaanly/Institute/select.css' %}">
+{% endblock head %}
+
 {% block topic %}
   <p>Which Branch would you like to see !</p>
 {% endblock topic %}
 
 {% block options %}
-    <input type="search" name="srch" id="pattern">
-  {% for name in data %}
-  <form action="{% url 'InstituteDetails' %}" method="post">
-    {% csrf_token %}
-    <input name="insti" value="{{ name.Programme }}" style="display: none;">
-    <input type="submit" value="{{name.Programme}}" style="width:fit-content;">
-  </form>
-  {% endfor %}
+  <div id="container">
+      <input type="search" name="srch" id="pattern" placeholder="search">
+    {% for name in data %}
+    <form action="{% url 'BranchDetails' %}" method="post" id="{{name.Programme}}">
+      {% csrf_token %}
+      <input name="branch" value="{{ name.Programme }}" style="display: none;">
+      <input name="seat" value="OPEN" style="display: none;"/>
+      <input type="submit" value="{{name.Programme}}" style="width:fit-content;" class="insti-name">
+    </form>
+    {% endfor %}
+    <script src="{% static 'josaaanly/searchhelper.js' %}">
+      
+    </script>
+  </div>
 {% endblock options %}
